@@ -12,8 +12,7 @@
 		"format": "pnpm run format:code && pnpm run format:imports",
 		"format:code": "biome format . --write && prettier -w \"**/*\" \"!**/*.{md,mdx}\" --ignore-unknown --cache",
 		"format:imports": "biome check --formatter-enabled=false --write",
-		"check": "astro check",
-		"generate-icons": "node scripts/generate-icons.js"
+		"check": "astro check"
 	},
 	"dependencies": {
 		"@astrojs/markdown-remark": "^6.0.2",
@@ -37,6 +36,7 @@
 		"remark-directive": "^3.0.0",
 		"satori": "0.12.1",
 		"satori-html": "^0.3.2",
+		"sharp": "^0.33.5",
 		"unified": "^11.0.5",
 		"unist-util-visit": "^5.0.0"
 	},
@@ -55,15 +55,10 @@
 		"prettier-plugin-astro": "0.14.1",
 		"prettier-plugin-tailwindcss": "^0.6.11",
 		"reading-time": "^1.5.0",
-		"sharp": "^0.33.5",
 		"tailwindcss": "4.0.0",
 		"typescript": "^5.7.3"
 	},
 	"pnpm": {
-		"onlyBuiltDependencies": [
-			"@biomejs/biome",
-			"esbuild",
-			"sharp"
-		]
+		"onlyBuiltDependencies": ["@biomejs/biome", "esbuild", "sharp"]
 	}
 }

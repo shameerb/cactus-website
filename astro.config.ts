@@ -23,7 +23,7 @@ import rehypeUnwrapImages from "rehype-unwrap-images";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://shameerb.com',
+	site: siteConfig.url,
 	base: '/',
 	trailingSlash: 'always',
 	build: {
@@ -39,42 +39,38 @@ export default defineConfig({
 		mdx(),
 		robotsTxt(),
 		webmanifest({
+			// See: https://github.com/alextim/astro-lib/blob/main/packages/astro-webmanifest/README.md
 			name: siteConfig.title,
 			short_name: siteConfig.title,
 			description: siteConfig.description,
 			lang: siteConfig.lang,
-			theme_color: "#FFF1E5",
-			background_color: "#FFF1E5",
-			icon: "public/icon.svg",
+			icon: "public/icon.svg", // the source for generating favicon & icons
 			icons: [
 				{
-					src: "icons/favicon-16x16.png",
-					sizes: "16x16",
-					type: "image/png"
-				},
-				{
-					src: "icons/favicon-32x32.png",
-					sizes: "32x32",
-					type: "image/png"
-				},
-				{
-					src: "icons/apple-touch-icon.png",
+					src: "icons/apple-touch-icon.png", // used in src/components/BaseHead.astro L:26
 					sizes: "180x180",
-					type: "image/png"
+					type: "image/png",
 				},
 				{
-					src: "icons/android-chrome-192x192.png",
+					src: "icons/icon-192.png",
 					sizes: "192x192",
-					type: "image/png"
+					type: "image/png",
 				},
 				{
-					src: "icons/android-chrome-512x512.png",
+					src: "icons/icon-512.png",
 					sizes: "512x512",
-					type: "image/png"
-				}
+					type: "image/png",
+				},
 			],
 			start_url: "/",
+			background_color: "#1d1f21",
+			theme_color: "#2bbc8a",
 			display: "standalone",
+			config: {
+				insertFaviconLinks: false,
+				insertThemeColorMeta: false,
+				insertManifestLink: false,
+			},
 		}),
 	],
 	markdown: {
