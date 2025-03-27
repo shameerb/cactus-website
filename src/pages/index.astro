@@ -1,8 +1,8 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry } from "astro:content";
 import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
-import Note from "@/components/note/Note.astro";
+// import Note from "@/components/note/Note.astro";
 import { getAllPosts } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
@@ -14,19 +14,19 @@ const allPostsByDate = allPosts
 	.sort(collectionDateSort)
 	.slice(0, MAX_POSTS) as CollectionEntry<"post">[];
 
-// Notes
-const MAX_NOTES = 5;
-const allNotes = await getCollection("note");
-const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
+// Notes section temporarily disabled
+// const MAX_NOTES = 5;
+// const allNotes = await getCollection("note");
+// const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 ---
 
 <PageLayout meta={{ title: "Home" }}>
 	<section>
 		<h1 class="title mb-6">Welcome to my corner of the web!</h1>
 		<p class="mb-4">
-			Hi, I'm Shameer Baramy. This is my personal blog where I share my thoughts, experiences, and insights
-			about technology, development, and other topics that interest me. Feel free to explore my posts and notes
-			below, or connect with me through my social links.
+			Hi, I'm Shameer Baramy. This is my personal blog where I share my thoughts, experiences, and
+			insights about technology, development, and other topics that interest me. Feel free to
+			explore my posts below, or connect with me through my social links.
 		</p>
 		<SocialList />
 	</section>
@@ -43,6 +43,8 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 		</ul>
 	</section>
 	{
+		/* Notes section temporarily disabled
+	{
 		latestNotes.length > 0 && (
 			<section class="mt-16">
 				<h2 class="title text-accent mb-6 text-xl">
@@ -57,5 +59,7 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 				</ul>
 			</section>
 		)
+	}
+	*/
 	}
 </PageLayout>
