@@ -13,22 +13,18 @@ import { menuLinks, siteConfig } from "@/site.config";
 		>
 			<svg
 				aria-hidden="true"
-				class="me-3 h-10 w-6 sm:absolute sm:-start-18 sm:me-0 sm:h-20 sm:w-12"
+				class="me-3 h-10 w-6 transition-colors group-hover:text-green-500 sm:absolute sm:-start-18 sm:me-0 sm:h-20 sm:w-12"
 				fill="none"
 				focusable="false"
-				viewBox="0 0 272 480"
+				viewBox="0 0 100 100"
 				xmlns="http://www.w3.org/2000/svg"
+				stroke="currentColor"
+				stroke-width="8"
+				stroke-linecap="round"
+				stroke-linejoin="round"
 			>
 				<title>Console Logo</title>
-
-				<!-- Console prompt main shape -->
-				<path d="M70 170L160 240L70 310L70 170Z" fill="#53C68C"></path>
-
-				<!-- Console prompt shadow/depth -->
-				<path d="M70 310L160 240L190 260L100 330L70 310Z" fill="#B04304"></path>
-
-				<!-- Console prompt top highlight -->
-				<path d="M70 170L160 240L190 220L100 150L70 170Z" fill="#FF5D01"></path>
+				<path d="M30 30L70 50L30 70"></path>
 			</svg>
 			<span class="text-xl font-bold sm:text-2xl">{siteConfig.title}</span>
 		</a>
@@ -69,26 +65,28 @@ import { menuLinks, siteConfig } from "@/site.config";
 				focusable="false"
 				id="line-svg"
 				stroke="currentColor"
-				stroke-width="1.5"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
 				viewBox="0 0 24 24"
 				xmlns="http://www.w3.org/2000/svg"
 			>
-				<path d="M3.75 9h16.5m-16.5 6.75h16.5" stroke-linecap="round" stroke-linejoin="round"
-				></path>
+				<path d="M7 8L15 12L7 16"></path>
 			</svg>
 			<svg
 				aria-hidden="true"
 				class="text-accent absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
-				class="text-accent"
 				fill="none"
 				focusable="false"
 				id="cross-svg"
 				stroke="currentColor"
-				stroke-width="1.5"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
 				viewBox="0 0 24 24"
 				xmlns="http://www.w3.org/2000/svg"
 			>
-				<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+				<path d="M15 8L7 12L15 16"></path>
 			</svg>
 		</button>
 	</mobile-button>
