@@ -71,9 +71,6 @@ importers:
       satori-html:
         specifier: ^0.3.2
         version: 0.3.2
-      sharp:
-        specifier: ^0.33.5
-        version: 0.33.5
       unified:
         specifier: ^11.0.5
         version: 11.0.5
@@ -123,6 +120,9 @@ importers:
       reading-time:
         specifier: ^1.5.0
         version: 1.5.0
+      sharp:
+        specifier: ^0.33.5
+        version: 0.33.5
       tailwindcss:
         specifier: 4.0.0
         version: 4.0.0
